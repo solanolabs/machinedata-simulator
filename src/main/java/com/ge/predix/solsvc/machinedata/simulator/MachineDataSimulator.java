@@ -143,6 +143,73 @@ public class MachineDataSimulator
         data.setUnit(machineControllerId);
         list.add(data);
 
+	// additional sample myDevices
+	for (int myDevice = 2001; myDevice <= 2009; myDevice++) {
+	String myMachineControllerId = String.valueOf(myDevice);
+        data = new JSONData();
+        data.setName("Compressor-" + myMachineControllerId + ":CompressionRatio"); //$NON-NLS-1$
+        data.setTimestamp(getCurrentTimestamp());
+        data.setValue((generateRandomUsageValue(2.5, 3.0) - 1) * 65535.0 / 9.0);
+        data.setDatatype("DOUBLE"); //$NON-NLS-1$
+        data.setRegister(""); //$NON-NLS-1$
+        data.setUnit(myMachineControllerId);
+        list.add(data);
+
+        data = new JSONData();
+        data.setName("Compressor-" + myMachineControllerId + ":DischargePressure"); //$NON-NLS-1$
+        data.setTimestamp(getCurrentTimestamp());
+        data.setValue((generateRandomUsageValue(0.0, 23.0) * 65535.0) / 100.0);
+        data.setDatatype("DOUBLE"); //$NON-NLS-1$
+        data.setRegister(""); //$NON-NLS-1$
+        data.setUnit(myMachineControllerId);
+        list.add(data);
+
+        data = new JSONData();
+        data.setName("Compressor-" + myMachineControllerId + ":SuctionPressure"); //$NON-NLS-1$
+        data.setTimestamp(getCurrentTimestamp());
+        data.setValue((generateRandomUsageValue(0.0, 0.21) * 65535.0) / 100.0);
+        data.setDatatype("DOUBLE"); //$NON-NLS-1$
+        data.setRegister(""); //$NON-NLS-1$
+        data.setUnit(myMachineControllerId);
+        list.add(data);
+
+        data = new JSONData();
+        data.setName("Compressor-" + myMachineControllerId + ":MaximumPressure"); //$NON-NLS-1$
+        data.setTimestamp(getCurrentTimestamp());
+        data.setValue((generateRandomUsageValue(22.0, 26.0) * 65535.0) / 100.0);
+        data.setDatatype("DOUBLE"); //$NON-NLS-1$
+        data.setRegister(""); //$NON-NLS-1$
+        data.setUnit(myMachineControllerId);
+        list.add(data);
+
+        data = new JSONData();
+        data.setName("Compressor-" + myMachineControllerId + ":MinimumPressure"); //$NON-NLS-1$
+        data.setTimestamp(getCurrentTimestamp());
+        data.setValue(0.0);
+        data.setDatatype("DOUBLE"); //$NON-NLS-1$
+        data.setRegister(""); //$NON-NLS-1$
+        data.setUnit(myMachineControllerId);
+        list.add(data);
+
+        data = new JSONData();
+        data.setName("Compressor-" + myMachineControllerId + ":Temperature"); //$NON-NLS-1$
+        data.setTimestamp(getCurrentTimestamp());
+        data.setValue((generateRandomUsageValue(65.0, 80.0) * 65535.0) / 200.0);
+        data.setDatatype("DOUBLE"); //$NON-NLS-1$
+        data.setRegister(""); //$NON-NLS-1$
+        data.setUnit(myMachineControllerId);
+        list.add(data);
+
+        data = new JSONData();
+        data.setName("Compressor-" + myMachineControllerId + ":Velocity"); //$NON-NLS-1$
+        data.setTimestamp(getCurrentTimestamp());
+        data.setValue((generateRandomUsageValue(0.0, 0.1) * 65535.0) / 0.5);
+        data.setDatatype("DOUBLE"); //$NON-NLS-1$
+        data.setRegister(""); //$NON-NLS-1$
+        data.setUnit(myMachineControllerId);
+        list.add(data);
+	}
+
         return list;
     }
 
